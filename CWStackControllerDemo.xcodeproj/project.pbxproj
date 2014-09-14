@@ -12,13 +12,15 @@
 		A0F4578B19C52CA90089A59C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F4578A19C52CA90089A59C /* UIKit.framework */; };
 		A0F4579119C52CA90089A59C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0F4578F19C52CA90089A59C /* InfoPlist.strings */; };
 		A0F4579319C52CA90089A59C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F4579219C52CA90089A59C /* main.m */; };
-		A0F4579719C52CA90089A59C /* CWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F4579619C52CA90089A59C /* CWAppDelegate.m */; };
+		A0F4579719C52CA90089A59C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F4579619C52CA90089A59C /* AppDelegate.m */; };
 		A0F4579919C52CA90089A59C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0F4579819C52CA90089A59C /* Images.xcassets */; };
 		A0F457A019C52CA90089A59C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F4579F19C52CA90089A59C /* XCTest.framework */; };
 		A0F457A119C52CA90089A59C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F4578619C52CA90089A59C /* Foundation.framework */; };
 		A0F457A219C52CA90089A59C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F4578A19C52CA90089A59C /* UIKit.framework */; };
 		A0F457AA19C52CA90089A59C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0F457A819C52CA90089A59C /* InfoPlist.strings */; };
 		A0F457AC19C52CA90089A59C /* CWStackControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F457AB19C52CA90089A59C /* CWStackControllerDemoTests.m */; };
+		A0F457B819C52DA00089A59C /* CWStackController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F457B719C52DA00089A59C /* CWStackController.m */; };
+		A0F457BC19C52EBB0089A59C /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F457BB19C52EBB0089A59C /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,14 +42,19 @@
 		A0F4579019C52CA90089A59C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0F4579219C52CA90089A59C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0F4579419C52CA90089A59C /* CWStackControllerDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CWStackControllerDemo-Prefix.pch"; sourceTree = "<group>"; };
-		A0F4579519C52CA90089A59C /* CWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWAppDelegate.h; sourceTree = "<group>"; };
-		A0F4579619C52CA90089A59C /* CWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWAppDelegate.m; sourceTree = "<group>"; };
+		A0F4579519C52CA90089A59C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A0F4579619C52CA90089A59C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A0F4579819C52CA90089A59C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A0F4579E19C52CA90089A59C /* CWStackControllerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CWStackControllerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F4579F19C52CA90089A59C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A0F457A719C52CA90089A59C /* CWStackControllerDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CWStackControllerDemoTests-Info.plist"; sourceTree = "<group>"; };
 		A0F457A919C52CA90089A59C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0F457AB19C52CA90089A59C /* CWStackControllerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWStackControllerDemoTests.m; sourceTree = "<group>"; };
+		A0F457B619C52DA00089A59C /* CWStackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWStackController.h; sourceTree = "<group>"; };
+		A0F457B719C52DA00089A59C /* CWStackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWStackController.m; sourceTree = "<group>"; };
+		A0F457B919C52DDD0089A59C /* CWStackProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWStackProtocol.h; sourceTree = "<group>"; };
+		A0F457BA19C52EBB0089A59C /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		A0F457BB19C52EBB0089A59C /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +84,7 @@
 		A0F4577A19C52CA90089A59C = {
 			isa = PBXGroup;
 			children = (
+				A0F457B519C52D820089A59C /* CWStackController */,
 				A0F4578C19C52CA90089A59C /* CWStackControllerDemo */,
 				A0F457A519C52CA90089A59C /* CWStackControllerDemoTests */,
 				A0F4578519C52CA90089A59C /* Frameworks */,
@@ -107,8 +115,10 @@
 		A0F4578C19C52CA90089A59C /* CWStackControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				A0F4579519C52CA90089A59C /* CWAppDelegate.h */,
-				A0F4579619C52CA90089A59C /* CWAppDelegate.m */,
+				A0F4579519C52CA90089A59C /* AppDelegate.h */,
+				A0F4579619C52CA90089A59C /* AppDelegate.m */,
+				A0F457BA19C52EBB0089A59C /* TableViewController.h */,
+				A0F457BB19C52EBB0089A59C /* TableViewController.m */,
 				A0F4579819C52CA90089A59C /* Images.xcassets */,
 				A0F4578D19C52CA90089A59C /* Supporting Files */,
 			);
@@ -142,6 +152,16 @@
 				A0F457A819C52CA90089A59C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A0F457B519C52D820089A59C /* CWStackController */ = {
+			isa = PBXGroup;
+			children = (
+				A0F457B619C52DA00089A59C /* CWStackController.h */,
+				A0F457B719C52DA00089A59C /* CWStackController.m */,
+				A0F457B919C52DDD0089A59C /* CWStackProtocol.h */,
+			);
+			path = CWStackController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,8 +260,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0F4579719C52CA90089A59C /* CWAppDelegate.m in Sources */,
+				A0F457B819C52DA00089A59C /* CWStackController.m in Sources */,
+				A0F4579719C52CA90089A59C /* AppDelegate.m in Sources */,
 				A0F4579319C52CA90089A59C /* main.m in Sources */,
+				A0F457BC19C52EBB0089A59C /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
