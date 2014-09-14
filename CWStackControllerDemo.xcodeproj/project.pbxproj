@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A0F4578719C52CA90089A59C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F4578619C52CA90089A59C /* Foundation.framework */; };
+		A0F4578919C52CA90089A59C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F4578819C52CA90089A59C /* CoreGraphics.framework */; };
+		A0F4578B19C52CA90089A59C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F4578A19C52CA90089A59C /* UIKit.framework */; };
+		A0F4579119C52CA90089A59C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0F4578F19C52CA90089A59C /* InfoPlist.strings */; };
+		A0F4579319C52CA90089A59C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F4579219C52CA90089A59C /* main.m */; };
+		A0F4579719C52CA90089A59C /* CWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F4579619C52CA90089A59C /* CWAppDelegate.m */; };
+		A0F4579919C52CA90089A59C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0F4579819C52CA90089A59C /* Images.xcassets */; };
+		A0F457A019C52CA90089A59C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F4579F19C52CA90089A59C /* XCTest.framework */; };
+		A0F457A119C52CA90089A59C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F4578619C52CA90089A59C /* Foundation.framework */; };
+		A0F457A219C52CA90089A59C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F4578A19C52CA90089A59C /* UIKit.framework */; };
+		A0F457AA19C52CA90089A59C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0F457A819C52CA90089A59C /* InfoPlist.strings */; };
+		A0F457AC19C52CA90089A59C /* CWStackControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F457AB19C52CA90089A59C /* CWStackControllerDemoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A0F457A319C52CA90089A59C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0F4577B19C52CA90089A59C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0F4578219C52CA90089A59C;
+			remoteInfo = CWStackControllerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A0F4578319C52CA90089A59C /* CWStackControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CWStackControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F4578619C52CA90089A59C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A0F4578819C52CA90089A59C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A0F4578A19C52CA90089A59C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A0F4578E19C52CA90089A59C /* CWStackControllerDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CWStackControllerDemo-Info.plist"; sourceTree = "<group>"; };
+		A0F4579019C52CA90089A59C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A0F4579219C52CA90089A59C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A0F4579419C52CA90089A59C /* CWStackControllerDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CWStackControllerDemo-Prefix.pch"; sourceTree = "<group>"; };
+		A0F4579519C52CA90089A59C /* CWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWAppDelegate.h; sourceTree = "<group>"; };
+		A0F4579619C52CA90089A59C /* CWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWAppDelegate.m; sourceTree = "<group>"; };
+		A0F4579819C52CA90089A59C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A0F4579E19C52CA90089A59C /* CWStackControllerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CWStackControllerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F4579F19C52CA90089A59C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A0F457A719C52CA90089A59C /* CWStackControllerDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CWStackControllerDemoTests-Info.plist"; sourceTree = "<group>"; };
+		A0F457A919C52CA90089A59C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A0F457AB19C52CA90089A59C /* CWStackControllerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWStackControllerDemoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A0F4578019C52CA90089A59C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0F4578919C52CA90089A59C /* CoreGraphics.framework in Frameworks */,
+				A0F4578B19C52CA90089A59C /* UIKit.framework in Frameworks */,
+				A0F4578719C52CA90089A59C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0F4579B19C52CA90089A59C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0F457A019C52CA90089A59C /* XCTest.framework in Frameworks */,
+				A0F457A219C52CA90089A59C /* UIKit.framework in Frameworks */,
+				A0F457A119C52CA90089A59C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A0F4577A19C52CA90089A59C = {
+			isa = PBXGroup;
+			children = (
+				A0F4578C19C52CA90089A59C /* CWStackControllerDemo */,
+				A0F457A519C52CA90089A59C /* CWStackControllerDemoTests */,
+				A0F4578519C52CA90089A59C /* Frameworks */,
+				A0F4578419C52CA90089A59C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A0F4578419C52CA90089A59C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A0F4578319C52CA90089A59C /* CWStackControllerDemo.app */,
+				A0F4579E19C52CA90089A59C /* CWStackControllerDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A0F4578519C52CA90089A59C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0F4578619C52CA90089A59C /* Foundation.framework */,
+				A0F4578819C52CA90089A59C /* CoreGraphics.framework */,
+				A0F4578A19C52CA90089A59C /* UIKit.framework */,
+				A0F4579F19C52CA90089A59C /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A0F4578C19C52CA90089A59C /* CWStackControllerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A0F4579519C52CA90089A59C /* CWAppDelegate.h */,
+				A0F4579619C52CA90089A59C /* CWAppDelegate.m */,
+				A0F4579819C52CA90089A59C /* Images.xcassets */,
+				A0F4578D19C52CA90089A59C /* Supporting Files */,
+			);
+			path = CWStackControllerDemo;
+			sourceTree = "<group>";
+		};
+		A0F4578D19C52CA90089A59C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A0F4578E19C52CA90089A59C /* CWStackControllerDemo-Info.plist */,
+				A0F4578F19C52CA90089A59C /* InfoPlist.strings */,
+				A0F4579219C52CA90089A59C /* main.m */,
+				A0F4579419C52CA90089A59C /* CWStackControllerDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A0F457A519C52CA90089A59C /* CWStackControllerDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				A0F457AB19C52CA90089A59C /* CWStackControllerDemoTests.m */,
+				A0F457A619C52CA90089A59C /* Supporting Files */,
+			);
+			path = CWStackControllerDemoTests;
+			sourceTree = "<group>";
+		};
+		A0F457A619C52CA90089A59C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A0F457A719C52CA90089A59C /* CWStackControllerDemoTests-Info.plist */,
+				A0F457A819C52CA90089A59C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A0F4578219C52CA90089A59C /* CWStackControllerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0F457AF19C52CA90089A59C /* Build configuration list for PBXNativeTarget "CWStackControllerDemo" */;
+			buildPhases = (
+				A0F4577F19C52CA90089A59C /* Sources */,
+				A0F4578019C52CA90089A59C /* Frameworks */,
+				A0F4578119C52CA90089A59C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CWStackControllerDemo;
+			productName = CWStackControllerDemo;
+			productReference = A0F4578319C52CA90089A59C /* CWStackControllerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A0F4579D19C52CA90089A59C /* CWStackControllerDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0F457B219C52CA90089A59C /* Build configuration list for PBXNativeTarget "CWStackControllerDemoTests" */;
+			buildPhases = (
+				A0F4579A19C52CA90089A59C /* Sources */,
+				A0F4579B19C52CA90089A59C /* Frameworks */,
+				A0F4579C19C52CA90089A59C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0F457A419C52CA90089A59C /* PBXTargetDependency */,
+			);
+			name = CWStackControllerDemoTests;
+			productName = CWStackControllerDemoTests;
+			productReference = A0F4579E19C52CA90089A59C /* CWStackControllerDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A0F4577B19C52CA90089A59C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CW;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = CocoaWind;
+				TargetAttributes = {
+					A0F4579D19C52CA90089A59C = {
+						TestTargetID = A0F4578219C52CA90089A59C;
+					};
+				};
+			};
+			buildConfigurationList = A0F4577E19C52CA90089A59C /* Build configuration list for PBXProject "CWStackControllerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A0F4577A19C52CA90089A59C;
+			productRefGroup = A0F4578419C52CA90089A59C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A0F4578219C52CA90089A59C /* CWStackControllerDemo */,
+				A0F4579D19C52CA90089A59C /* CWStackControllerDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A0F4578119C52CA90089A59C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0F4579119C52CA90089A59C /* InfoPlist.strings in Resources */,
+				A0F4579919C52CA90089A59C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0F4579C19C52CA90089A59C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0F457AA19C52CA90089A59C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A0F4577F19C52CA90089A59C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0F4579719C52CA90089A59C /* CWAppDelegate.m in Sources */,
+				A0F4579319C52CA90089A59C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0F4579A19C52CA90089A59C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0F457AC19C52CA90089A59C /* CWStackControllerDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A0F457A419C52CA90089A59C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0F4578219C52CA90089A59C /* CWStackControllerDemo */;
+			targetProxy = A0F457A319C52CA90089A59C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A0F4578F19C52CA90089A59C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0F4579019C52CA90089A59C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A0F457A819C52CA90089A59C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0F457A919C52CA90089A59C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A0F457AD19C52CA90089A59C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A0F457AE19C52CA90089A59C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A0F457B019C52CA90089A59C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CWStackControllerDemo/CWStackControllerDemo-Prefix.pch";
+				INFOPLIST_FILE = "CWStackControllerDemo/CWStackControllerDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A0F457B119C52CA90089A59C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CWStackControllerDemo/CWStackControllerDemo-Prefix.pch";
+				INFOPLIST_FILE = "CWStackControllerDemo/CWStackControllerDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A0F457B319C52CA90089A59C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CWStackControllerDemo.app/CWStackControllerDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CWStackControllerDemo/CWStackControllerDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CWStackControllerDemoTests/CWStackControllerDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A0F457B419C52CA90089A59C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CWStackControllerDemo.app/CWStackControllerDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CWStackControllerDemo/CWStackControllerDemo-Prefix.pch";
+				INFOPLIST_FILE = "CWStackControllerDemoTests/CWStackControllerDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A0F4577E19C52CA90089A59C /* Build configuration list for PBXProject "CWStackControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0F457AD19C52CA90089A59C /* Debug */,
+				A0F457AE19C52CA90089A59C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0F457AF19C52CA90089A59C /* Build configuration list for PBXNativeTarget "CWStackControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0F457B019C52CA90089A59C /* Debug */,
+				A0F457B119C52CA90089A59C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A0F457B219C52CA90089A59C /* Build configuration list for PBXNativeTarget "CWStackControllerDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0F457B319C52CA90089A59C /* Debug */,
+				A0F457B419C52CA90089A59C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A0F4577B19C52CA90089A59C /* Project object */;
+}
