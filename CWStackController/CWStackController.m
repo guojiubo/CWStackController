@@ -418,13 +418,15 @@ typedef NS_ENUM(NSUInteger, CWPanGestureType) {
 
 - (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer;
 {
+    CGPoint translation = [gestureRecognizer translationInView:self.view];
+    if (fabs(translation.y) > fabs(translation.x)) {
+        return NO;
+    }
+    
+    [self resetPreviousAndNext];
+    
     CGPoint velocity = [gestureRecognizer velocityInView:self.view];
-    
     self.panGestureType = velocity.x > 0 ? CWPanGestureTypePop : CWPanGestureTypePush;
-    
-    self.previousViewController = nil;
-    self.nextViewController = nil;
-    
     if (self.panGestureType == CWPanGestureTypePush) {
         if (![self.topViewController respondsToSelector:@selector(nextViewController)]) {
             return NO;
