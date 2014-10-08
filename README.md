@@ -36,6 +36,12 @@ Assume you have a view controller A is in the CWStackController stack, you want 
 
 You can customize the threshold to trigger a push or pop through pan gesture, the duration for animations and the shadow.
 
+**Work with scroll view:**
+
+CWStackController works well with scroll view now, if you want have scroll view in the child view controller and you want to PUSH or POP by drag it, you need to set scroll view to CWStackController instance using it's API:
+
+	- (void)setContentScrollView:(UIScrollView *)scrollView;
+
 See *Demo* project for more details.
 
 ## Installation
