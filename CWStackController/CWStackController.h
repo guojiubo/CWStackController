@@ -44,6 +44,8 @@
 @property (nonatomic, assign) CGSize shadowOffset;
 @property (nonatomic, assign) CGFloat shadowOpacity;
 
+- (void)setContentScrollView:(UIScrollView *)scrollView;
+
 @end
 
 @interface UIViewController (CWStackController)

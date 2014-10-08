@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		414A817719E54BD8000CBAC3 /* CWStackPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 414A817619E54BD8000CBAC3 /* CWStackPanGestureRecognizer.m */; };
+		A090789B19DB2BB900085B6E /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A090789919DB2BB900085B6E /* ScrollViewController.m */; };
+		A090789C19DB2BB900085B6E /* ScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A090789A19DB2BB900085B6E /* ScrollViewController.xib */; };
 		A0F4578719C52CA90089A59C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F4578619C52CA90089A59C /* Foundation.framework */; };
 		A0F4578919C52CA90089A59C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F4578819C52CA90089A59C /* CoreGraphics.framework */; };
 		A0F4578B19C52CA90089A59C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F4578A19C52CA90089A59C /* UIKit.framework */; };
@@ -34,6 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		414A817519E54BD8000CBAC3 /* CWStackPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWStackPanGestureRecognizer.h; sourceTree = "<group>"; };
+		414A817619E54BD8000CBAC3 /* CWStackPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWStackPanGestureRecognizer.m; sourceTree = "<group>"; };
+		A090789819DB2BB900085B6E /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
+		A090789919DB2BB900085B6E /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
+		A090789A19DB2BB900085B6E /* ScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollViewController.xib; sourceTree = "<group>"; };
 		A0F4578319C52CA90089A59C /* CWStackControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CWStackControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F4578619C52CA90089A59C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A0F4578819C52CA90089A59C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +127,9 @@
 				A0F4579619C52CA90089A59C /* AppDelegate.m */,
 				A0F457BA19C52EBB0089A59C /* TableViewController.h */,
 				A0F457BB19C52EBB0089A59C /* TableViewController.m */,
+				A090789819DB2BB900085B6E /* ScrollViewController.h */,
+				A090789919DB2BB900085B6E /* ScrollViewController.m */,
+				A090789A19DB2BB900085B6E /* ScrollViewController.xib */,
 				A0F4579819C52CA90089A59C /* Images.xcassets */,
 				A0F4578D19C52CA90089A59C /* Supporting Files */,
 			);
@@ -160,6 +171,8 @@
 				A0F457B619C52DA00089A59C /* CWStackController.h */,
 				A0F457B719C52DA00089A59C /* CWStackController.m */,
 				A0F457B919C52DDD0089A59C /* CWStackProtocol.h */,
+				414A817519E54BD8000CBAC3 /* CWStackPanGestureRecognizer.h */,
+				414A817619E54BD8000CBAC3 /* CWStackPanGestureRecognizer.m */,
 			);
 			path = CWStackController;
 			sourceTree = "<group>";
@@ -242,6 +255,7 @@
 			files = (
 				A0F4579119C52CA90089A59C /* InfoPlist.strings in Resources */,
 				A0F4579919C52CA90089A59C /* Images.xcassets in Resources */,
+				A090789C19DB2BB900085B6E /* ScrollViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,9 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A090789B19DB2BB900085B6E /* ScrollViewController.m in Sources */,
 				A0F457B819C52DA00089A59C /* CWStackController.m in Sources */,
 				A0F4579719C52CA90089A59C /* AppDelegate.m in Sources */,
 				A0F4579319C52CA90089A59C /* main.m in Sources */,
+				414A817719E54BD8000CBAC3 /* CWStackPanGestureRecognizer.m in Sources */,
 				A0F457BC19C52EBB0089A59C /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +476,7 @@
 				A0F457B119C52CA90089A59C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0F457B219C52CA90089A59C /* Build configuration list for PBXNativeTarget "CWStackControllerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +485,7 @@
 				A0F457B419C52CA90089A59C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

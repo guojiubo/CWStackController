@@ -7,23 +7,20 @@
 //
 
 #import "CWStackController.h"
-
-typedef NS_ENUM(NSUInteger, CWPanGestureType) {
-    CWPanGestureTypeNone,
-    CWPanGestureTypePush,
-    CWPanGestureTypePop
-};
+#import "CWStackPanGestureRecognizer.h"
 
 @interface CWStackController () <UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIViewController *previousViewController;
 @property (nonatomic, strong) UIViewController *nextViewController;
-@property (nonatomic, assign) CWPanGestureType panGestureType;
 @property (nonatomic, strong) UIViewController *tabBarHolder;
+@property (nonatomic, strong) CWStackPanGestureRecognizer *panGestureRecognizer;
 
 @end
 
 @implementation CWStackController
+
+#pragma mark - Internal
 
 - (id)init
 {
@@ -39,6 +36,23 @@ typedef NS_ENUM(NSUInteger, CWPanGestureType) {
     return self;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    CWStackPanGestureRecognizer *recognizer = [[CWStackPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+    recognizer.delegate = self;
+    [self.view addGestureRecognizer:recognizer];
+    self.panGestureRecognizer = recognizer;
+}
+
+- (CGRect)contentBounds
+{
+    return [self.view bounds];
+}
+
+#pragma mark - Public
+
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController
 {
     self = [self init];
@@ -50,17 +64,6 @@ typedef NS_ENUM(NSUInteger, CWPanGestureType) {
     }
     return self;
 }
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
-    recognizer.delegate = self;
-    [self.view addGestureRecognizer:recognizer];
-}
-
-#pragma mark - Stack
 
 - (UIViewController *)topViewController
 {
@@ -256,19 +259,57 @@ typedef NS_ENUM(NSUInteger, CWPanGestureType) {
     return [self popToViewController:[self.viewControllers firstObject] animated:animated];
 }
 
-- (CGRect)contentBounds
+- (void)setContentScrollView:(UIScrollView *)scrollView
 {
-    return [self.view bounds];
+    [self.panGestureRecognizer setScrollView:scrollView];
 }
 
 #pragma mark - Gesture
 
-- (void)handlePanGesture:(UIPanGestureRecognizer *)recognizer
+- (void)resetPreviousAndNext
 {
-    if (self.panGestureType == CWPanGestureTypePush) {
+    self.previousViewController = nil;
+    self.nextViewController = nil;
+}
+
+- (void)handlePanGesture:(CWStackPanGestureRecognizer *)recognizer
+{
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        [self resetPreviousAndNext];
+        
+        if (recognizer.direction == CWStackPanGestureRecognizerDirectionPush) {
+            if (![self.topViewController respondsToSelector:@selector(nextViewController)]) {
+                return;
+            }
+            
+            self.nextViewController = [self.topViewController performSelector:@selector(nextViewController) withObject:nil];
+            if (!self.nextViewController) {
+                return;
+            }
+            
+            self.previousViewController = self.topViewController;
+        }
+        else if (recognizer.direction == CWStackPanGestureRecognizerDirectionPop) {
+            NSUInteger topIndex = [self.childViewControllers indexOfObject:self.topViewController];
+            if (topIndex == 0) {
+                return;
+            }
+            
+            self.previousViewController = self.childViewControllers[topIndex - 1];
+        }
+    }
+    
+    if (recognizer.direction == CWStackPanGestureRecognizerDirectionPush) {
+        if (!self.nextViewController) {
+            return;
+        }
         [self handlePushGesture:recognizer];
     }
-    else if (self.panGestureType == CWPanGestureTypePop) {
+    
+    if (recognizer.direction == CWStackPanGestureRecognizerDirectionPop) {
+        if (!self.previousViewController) {
+            return;
+        }
         [self handlePopGesture:recognizer];
     }
 }
@@ -335,9 +376,14 @@ typedef NS_ENUM(NSUInteger, CWPanGestureType) {
             finalFrame.origin.x = finalFrame.size.width;
             [[self.nextViewController view] setFrame:finalFrame];
         } completion:^(BOOL finished) {
+            [self.previousViewController viewWillAppear:YES];
+            
             [self.nextViewController willMoveToParentViewController:nil];
             [[self.nextViewController view] removeFromSuperview];
             [self.nextViewController removeFromParentViewController];
+            
+            [self.previousViewController viewDidAppear:YES];
+
             
             if (self.tabBarController && [self.previousViewController isEqual:self.tabBarHolder] && ![self.previousViewController hidesBottomBarWhenPushed]) {
                 // Put tabBar back
@@ -409,6 +455,9 @@ typedef NS_ENUM(NSUInteger, CWPanGestureType) {
             finalFrame.origin.x = -finalFrame.size.width/3;
             [[self.previousViewController view] setFrame:finalFrame];
         } completion:^(BOOL finished) {
+            [self.topViewController viewWillAppear:YES];
+            [self.topViewController viewDidAppear:YES];
+            
             [[self.previousViewController view] removeFromSuperview];
             
             [self resetPreviousAndNext];
@@ -416,45 +465,22 @@ typedef NS_ENUM(NSUInteger, CWPanGestureType) {
     }
 }
 
-- (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer;
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
-    CGPoint translation = [gestureRecognizer translationInView:self.view];
-    if (fabs(translation.y) > fabs(translation.x)) {
-        return NO;
+    if ([self.panGestureRecognizer direction] != CWStackPanGestureRecognizerDirectionNone) {
+        return YES;
     }
     
-    [self resetPreviousAndNext];
-    
-    CGPoint velocity = [gestureRecognizer velocityInView:self.view];
-    self.panGestureType = velocity.x > 0 ? CWPanGestureTypePop : CWPanGestureTypePush;
-    if (self.panGestureType == CWPanGestureTypePush) {
-        if (![self.topViewController respondsToSelector:@selector(nextViewController)]) {
-            return NO;
-        }
-        
-        self.nextViewController = [self.topViewController performSelector:@selector(nextViewController) withObject:nil];
-        if (!self.nextViewController) {
-            return NO;
-        }
-        
-        self.previousViewController = self.topViewController;
-    }
-    else if (self.panGestureType == CWPanGestureTypePop) {
-        NSUInteger topIndex = [self.childViewControllers indexOfObject:self.topViewController];
-        if (topIndex == 0) {
-            return NO;
-        }
-        
-        self.previousViewController = self.childViewControllers[topIndex - 1];
-    }
-    
-    return YES;
+    return NO;
 }
 
-- (void)resetPreviousAndNext
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
-    self.previousViewController = nil;
-    self.nextViewController = nil;
+    if ([otherGestureRecognizer.view isKindOfClass:[UIScrollView class]]) {
+        return YES;
+    }
+    
+    return NO;
 }
 
 #pragma mark - Shadow

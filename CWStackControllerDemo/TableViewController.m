@@ -7,6 +7,7 @@
 //
 
 #import "TableViewController.h"
+#import "ScrollViewController.h"
 
 @interface TableViewController () <CWStackProtocol>
 
@@ -31,7 +32,7 @@ static NSString *reuseIdentifier = @"Cell";
     NSUInteger index = [[self.stackController viewControllers] indexOfObject:self];
     [counterLabel setText:[@(index) stringValue]];
     
-    [self setMenus:@[@"Push", @"Pop", @"Pop to specific", @"Pop to root"]];
+    [self setMenus:@[@"Push", @"Pop", @"Pop to specific", @"Pop to root", @"Push scroll view"]];
     
     [[self tableView] registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseIdentifier];
 }
@@ -99,7 +100,13 @@ static NSString *reuseIdentifier = @"Cell";
             [self.stackController popToRootViewControllerAnimated:YES];
         }
             break;
-            
+        case 4:
+        {
+            ScrollViewController *vc = [[ScrollViewController alloc] init];
+            [self.stackController pushViewController:vc animated:YES];
+        }
+            break;
+    
         default:
             break;
     }
