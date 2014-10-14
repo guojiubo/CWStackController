@@ -138,6 +138,7 @@
         [[from view] removeFromSuperview];
         
         [to didMoveToParentViewController:self];
+        [to.view setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
         
         [self addShadowToView:to.view];
     };
@@ -368,6 +369,7 @@
                 [[self.previousViewController view] removeFromSuperview];
                 
                 [self.nextViewController didMoveToParentViewController:self];
+                [[self.nextViewController view] setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
                 
                 [self resetPreviousAndNext];
             }];
@@ -510,12 +512,14 @@
     return [self.topViewController shouldAutorotate];
 }
 
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
-    [UIView animateWithDuration:duration animations:^{
-        CGRect frame = [self contentBounds];
-        [[self.topViewController view] setFrame:frame];
-    }];
+    return [self.topViewController shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return [self.topViewController supportedInterfaceOrientations];
 }
 
 @end
