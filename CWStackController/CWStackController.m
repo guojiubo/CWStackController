@@ -11,6 +11,7 @@
 
 @interface CWStackController () <UIGestureRecognizerDelegate>
 
+@property (nonatomic, strong) UIViewController *rootViewController;
 @property (nonatomic, strong) UIViewController *previousViewController;
 @property (nonatomic, strong) UIViewController *nextViewController;
 @property (nonatomic, strong) UIViewController *tabBarHolder;
@@ -44,6 +45,9 @@
     recognizer.delegate = self;
     [self.view addGestureRecognizer:recognizer];
     self.panGestureRecognizer = recognizer;
+    
+    [self pushViewController:self.rootViewController animated:NO];
+    self.rootViewController = nil;
 }
 
 - (CGRect)contentBounds
@@ -57,10 +61,7 @@
 {
     self = [self init];
     if (self) {
-        [self addChildViewController:rootViewController];
-        [rootViewController.view setFrame:[self contentBounds]];
-        [self.view addSubview:rootViewController.view];
-        [rootViewController didMoveToParentViewController:self];
+        _rootViewController = rootViewController;
     }
     return self;
 }
@@ -110,7 +111,13 @@
     [from.view setFrame:originalFrame];
     originalFrame.origin.x = originalFrame.size.width;
     [[to view] setFrame:originalFrame];
-    [self.view insertSubview:to.view aboveSubview:[from view]];
+    
+    if (from) {
+        [self.view insertSubview:to.view aboveSubview:[from view]];
+    }
+    else {
+        [self.view addSubview:to.view];
+    }
     
     // Move tabBar away with previous view
     if (self.tabBarController && ![from hidesBottomBarWhenPushed] && to.hidesBottomBarWhenPushed) {
