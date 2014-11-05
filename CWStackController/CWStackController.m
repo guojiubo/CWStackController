@@ -291,6 +291,7 @@
             
             self.nextViewController = [self.topViewController performSelector:@selector(nextViewController) withObject:nil];
             if (!self.nextViewController) {
+                [self.panGestureRecognizer setState:UIGestureRecognizerStateFailed];
                 return;
             }
             
@@ -299,6 +300,7 @@
         else if (recognizer.direction == CWStackPanGestureRecognizerDirectionPop) {
             NSUInteger topIndex = [self.childViewControllers indexOfObject:self.topViewController];
             if (topIndex == 0) {
+                [self.panGestureRecognizer setState:UIGestureRecognizerStateFailed];
                 return;
             }
             
@@ -308,6 +310,7 @@
     
     if (recognizer.direction == CWStackPanGestureRecognizerDirectionPush) {
         if (!self.nextViewController) {
+            [self.panGestureRecognizer setState:UIGestureRecognizerStateFailed];
             return;
         }
         [self handlePushGesture:recognizer];
@@ -315,6 +318,7 @@
     
     if (recognizer.direction == CWStackPanGestureRecognizerDirectionPop) {
         if (!self.previousViewController) {
+            [self.panGestureRecognizer setState:UIGestureRecognizerStateFailed];
             return;
         }
         [self handlePopGesture:recognizer];

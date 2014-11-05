@@ -37,8 +37,6 @@
 // Do not change the gestures' delegates or override the getters for these properties.
 @property (nonatomic, strong, readonly) CWStackPanGestureRecognizer *panGestureRecognizer;
 
-@property
-
 // Customizations
 //
 // The threshold to trigger a push or pop through pan gesture.
