@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CWStackController"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "A UINavigationController like custom container view controller which provides fullscreen pan gesture support to POP and PUSH."
   s.homepage     = "https://github.com/guojiubo/CWStackController"
   s.license      = "MIT"
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.platform     = :ios, "5.0"
   s.requires_arc = true
-  s.source       = { :git => "https://github.com/guojiubo/CWStackController.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/guojiubo/CWStackController.git", :tag => "0.0.3" }
   s.source_files = "CWStackController/*.{h,m}"
   s.frameworks = 'Foundation', 'UIKit'
 
