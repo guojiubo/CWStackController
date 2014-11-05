@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CWStackProtocol.h"
+#import "CWStackPanGestureRecognizer.h"
 
 @interface CWStackController : UIViewController
 
@@ -31,6 +32,12 @@
 
 // The top view controller on the stack.
 @property (nonatomic, readonly) UIViewController *topViewController;
+
+// The build-in gesture recognizer, for interacting with other gesture recognizers.
+// Do not change the gestures' delegates or override the getters for these properties.
+@property (nonatomic, strong, readonly) CWStackPanGestureRecognizer *panGestureRecognizer;
+
+@property
 
 // Customizations
 //

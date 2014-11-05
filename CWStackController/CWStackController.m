@@ -7,7 +7,6 @@
 //
 
 #import "CWStackController.h"
-#import "CWStackPanGestureRecognizer.h"
 
 @interface CWStackController () <UIGestureRecognizerDelegate>
 
