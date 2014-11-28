@@ -139,7 +139,9 @@
         [to didMoveToParentViewController:self];
         [to.view setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
         
-        [self addShadowToView:to.view];
+        if (to != self.rootViewController) {
+            [self addShadowToView:to.view];
+        }
     };
     
     if (animated) {
