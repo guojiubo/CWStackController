@@ -538,12 +538,8 @@
         if ([parent isKindOfClass:[CWStackController class]]) {
             return (CWStackController *)parent;
         }
-        else if (parent.parentViewController && parent.parentViewController != parent) {
-            parent = parent.parentViewController;
-        }
-        else {
-            parent = nil;
-        }
+        
+        parent = parent.parentViewController;
     }
     return nil;
 }
