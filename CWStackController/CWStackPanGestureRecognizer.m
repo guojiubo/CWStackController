@@ -28,6 +28,21 @@
 {
     [super touchesMoved:touches withEvent:event];
     
+    // 6S 3D Touch fix, if we're moving in/out of the screen discard this event
+    for (UITouch *touch in touches) {
+        if ([touch respondsToSelector:@selector(force)]) {
+            CGPoint location = [touch locationInView:self.view];
+            CGPoint prevLocation = [touch previousLocationInView:self.view];
+            if (CGPointEqualToPoint(location, prevLocation)) {
+                // Point has not moved - must be 3D Touch which is not handled by this recognizer
+                return;
+            }
+        }
+        else {
+            break;
+        }
+    }
+    
     if (self.state == UIGestureRecognizerStateFailed) {
         return;
     }
